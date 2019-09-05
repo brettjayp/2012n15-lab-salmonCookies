@@ -1,0 +1,51 @@
+/* 
+Color Palette:
+    https://www.canva.com/colors/color-meanings/salmon/
+    #A83832 #C35047 #DE685C #FA8072 #00BDDA #00A4C1 #008BA9 (l-r, more pink > salmon > more blue)
+*/
+
+body {
+    background-color: #FA807240;
+}
+
+#titleBar {
+    position: absolute;
+    background-color: #DE685CCC;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+#heroImage {
+    background-color: #00BDDA;
+    width: 100%;
+    height: 300px;
+}
+
+#mainText {
+    background-color: #008BA9;
+    width: 95%;
+    height: 150px;
+    margin: 1% auto 1% auto;
+}
+
+.containerLists {
+    /* background-color: #DE685C40; */
+    background-color: #00BDDA40;
+    width: 95%;
+    height: auto;
+    margin: 1% auto 1% auto;
+    padding: 0.5% 0% 0.5% 0%;
+    display: flex;
+}
+
+.salmonLists {
+    /* background-color: #00BDDAAA; */
+    background-color: #DE685C90;
+    width: 18.5%;
+    height: 50px;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+}
+
