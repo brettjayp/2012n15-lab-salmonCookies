@@ -19,13 +19,13 @@ body {
 #heroImage {
     background-color: #00BDDA;
     width: 100%;
-    height: 300px;
+    height: auto;
 }
 
 #mainText {
     background-color: #008BA9;
     width: 95%;
-    height: 150px;
+    height: auto;
     margin: 1% auto 1% auto;
 }
 
