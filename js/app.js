@@ -1,14 +1,59 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 
 // setting up some global variables
 var hoursOfOps = [];
 for (var i = 6; i <= 20; i++){
-  var hour = i + '00';
-  hoursOfOps.push(hour);
+  if (i < 12){
+    var hour = `${i}am`;
+    hoursOfOps.push(hour);
+  } else if(i === 12){
+    var hour = `${i}pm`;
+    hoursOfOps.push(hour);
+  } else {
+    var hour = `${i-12}pm`;
+    hoursOfOps.push(hour);
+  }
 }
-
 console.log(hoursOfOps);
 
+var salesOneEl = document.getElementById('salesOne');
+
+var pike = {
+  name: 'First and Pike',
+  custMin: 23,
+  custMax: 65,
+  avgCookiesPerHour: 6.3,
+
+  customersPerHour: [],
+  calcCustomersPerHour: function(){
+    for(i = 0; i < hoursOfOps.length; i++){
+      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
+    }
+  },
+
+  cookiesPerHour: [],
+  cookiesDailyTotal: 0,
+  calcCookiesPerHour: function(){
+    for(i = 0; i < hoursOfOps.length; i++){
+      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerHour)); // Using Math.floor to return whole integers instead of long trailing decimal values
+      this.cookiesDailyTotal += this.cookiesPerHour[i]; // Doing this here prevents unnecessary code
+    }
+  },
+
+  hourSalesPer: [],
+  daySalesPer: [],
+
+};
+pike.calcCustomersPerHour();
+console.log(pike.customersPerHour);
+pike.calcCookiesPerHour();
+console.log(pike.cookiesPerHour);
+console.log(pike.cookiesDailyTotal)
+
+function getRandom(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // this is just here for a bit of self teaching
 var el = document.getElementById('spicy');

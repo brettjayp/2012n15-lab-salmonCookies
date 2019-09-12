@@ -43,7 +43,7 @@ body {
     /* background-color: #00BDDAAA; */
     background-color: #DE685C90;
     width: 18.5%;
-    height: 50px;
+    height: auto;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
