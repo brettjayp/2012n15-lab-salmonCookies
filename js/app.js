@@ -7,20 +7,8 @@ function getRandom(min, max){
 }
 
 // hours of operations will be a global variable
-var hoursOfOps = [];
-// oddly, if I maually add all of the hours to the array, it breaks it. But if I use this for loop, that works. If I do BOTH, that works. Only when I manually add and remove the for loop will it break.
-for (var i = 6; i <= 20; i++){
-  if (i < 12){
-    var hour = `${i}am`;
-    hoursOfOps.push(hour);
-  } else if(i === 12){
-    hour = `${i}pm`;
-    hoursOfOps.push(hour);
-  } else {
-    hour = `${i-12}pm`;
-    hoursOfOps.push(hour);
-  }
-}
+var hoursOfOps = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var i = 0;
 
 // link each list with the DOM
 var salesPike = document.getElementById('salesPike');
