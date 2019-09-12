@@ -6,23 +6,30 @@ function getRandom(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// setting up some global variables
+// hours of operations will be a global variable
 var hoursOfOps = [];
+// oddly, if I maually add all of the hours to the array, it breaks it. But if I use this for loop, that works. If I do BOTH, that works. Only when I manually add and remove the for loop will it break.
 for (var i = 6; i <= 20; i++){
   if (i < 12){
     var hour = `${i}am`;
     hoursOfOps.push(hour);
   } else if(i === 12){
-    var hour = `${i}pm`;
+    hour = `${i}pm`;
     hoursOfOps.push(hour);
   } else {
-    var hour = `${i-12}pm`;
+    hour = `${i-12}pm`;
     hoursOfOps.push(hour);
   }
 }
 
+// link each list with the DOM
 var salesPike = document.getElementById('salesPike');
+var salesSeaTac = document.getElementById('salesSeaTac');
+var salesSeattle = document.getElementById('salesSeattle');
+var salesCap = document.getElementById('salesCap');
+var salesAlki = document.getElementById('salesAlki');
 
+// create each site and populate it's data
 var pike = {
   name: 'First and Pike',
   custMin: 23,
@@ -58,14 +65,12 @@ var pike = {
       liEl.textContent = `${hoursOfOps[i]}: ${this.cookiesPerHour[i]} cookies`;
       salesPike.appendChild(liEl);
     }
-    
-    var liEl = document.createElement('li');
-    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`
+
+    liEl = document.createElement('li');
+    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`;
     salesPike.appendChild(liEl);
   },
 };
-pike.render();
-
 var seatac = {
   name: 'SeaTac Airport',
   custMin: 3,
@@ -101,17 +106,15 @@ var seatac = {
       liEl.textContent = `${hoursOfOps[i]}: ${this.cookiesPerHour[i]} cookies`;
       salesSeaTac.appendChild(liEl);
     }
-    
-    var liEl = document.createElement('li');
-    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`
+
+    liEl = document.createElement('li');
+    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`;
     salesSeaTac.appendChild(liEl);
   },
 };
-seatac.render();
-
 var seattle = {
   name: 'Seattle Center',
-  custMin:11,
+  custMin: 11,
   custMax: 38,
   avgCookiesPerSale: 3.7,
 
@@ -144,14 +147,12 @@ var seattle = {
       liEl.textContent = `${hoursOfOps[i]}: ${this.cookiesPerHour[i]} cookies`;
       salesSeattle.appendChild(liEl);
     }
-    
-    var liEl = document.createElement('li');
-    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`
+
+    liEl = document.createElement('li');
+    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`;
     salesSeattle.appendChild(liEl);
   },
 };
-seattle.render();
-
 var capitol = {
   name: 'Capitol Hill',
   custMin: 20,
@@ -187,14 +188,12 @@ var capitol = {
       liEl.textContent = `${hoursOfOps[i]}: ${this.cookiesPerHour[i]} cookies`;
       salesCap.appendChild(liEl);
     }
-    
-    var liEl = document.createElement('li');
-    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`
+
+    liEl = document.createElement('li');
+    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`;
     salesCap.appendChild(liEl);
   },
 };
-capitol.render();
-
 var alki = {
   name: 'Alki',
   custMin: 2,
@@ -230,11 +229,17 @@ var alki = {
       liEl.textContent = `${hoursOfOps[i]}: ${this.cookiesPerHour[i]} cookies`;
       salesAlki.appendChild(liEl);
     }
-    
-    var liEl = document.createElement('li');
-    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`
+
+    liEl = document.createElement('li');
+    liEl.textContent = `Total: ${this.cookiesDailyTotal} cookies`;
     salesAlki.appendChild(liEl);
   },
 };
+
+// render each site location
+pike.render();
+seatac.render();
+seattle.render();
+capitol.render();
 alki.render();
 
