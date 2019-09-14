@@ -1,55 +1,33 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 
-// required links with the DOM
-var tableHead = document.getElementById('tableHead');
-var salesPike = document.getElementById('salesPike');
-var salesSeaTac = document.getElementById('salesSeaTac');
-var salesSeattle = document.getElementById('salesSeattle');
-var salesCap = document.getElementById('salesCap');
-var salesAlki = document.getElementById('salesAlki');
-var tableFoot = document.getElementById('tableFoot');
-
 // Global Variables
+var salmonTable = document.getElementById('salmonTable');
 var hoursOfOps = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var totalTotal = 0;
+var hoursTotals = [];
+var allStores = [];
 
 // Functions, other than constructor functions
 function getRandom(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function renderHead(){
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Location';
-  tableHead.appendChild(thEl);
-
+  var trEl = addElement('tr', false, salmonTable);
+  addElement('th', 'Location', trEl);
   for(var i = 0; i < hoursOfOps.length; i++){
-    thEl = document.createElement('th');
-    thEl.textContent = hoursOfOps[i];
-    tableHead.appendChild(thEl);
+    addElement('th', hoursOfOps[i], trEl);
   }
-
-  thEl = document.createElement('th');
-  thEl.textContent = 'Total';
-  tableHead.appendChild(thEl);
+  addElement('th', 'Daily Total', trEl);
 }
 function renderFoot(){
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Hourly Totals';
-  tableFoot.appendChild(thEl);
-
-  hourlyTotals();
+  var trEl = addElement('tr', false, salmonTable);
+  addElement('th', 'Hourly Totals', trEl);
   for(var i = 0; i < hoursOfOps.length; i++){
-    var tdEl = document.createElement('td');
-    tdEl.textContent = hoursTotals[i];
-    tableFoot.appendChild(tdEl);
+    addElement('td', hoursTotals[i], trEl);
   }
-
-  thEl = document.createElement('th');
-  thEl.textContent = totalTotal;
-  tableFoot.appendChild(thEl);
+  addElement('th', totalTotal, trEl);
 }
-var hoursTotals = [];
 function hourlyTotals(){
   for(var i = 0; i < hoursOfOps.length; i++){
     var hourlyTotal = 0;
@@ -67,6 +45,8 @@ function Store(name, min, max, avg){
   this.minimumCustomers = min;
   this.maximumCustomers = max;
   this.averageCookiesPerSale = avg;
+
+  allStores.push(this);
 }
 
 Store.prototype.calculateCustomersAndCookies = function(){
@@ -80,38 +60,58 @@ Store.prototype.calculateCustomersAndCookies = function(){
   }
 };
 
-Store.prototype.render = function(id){
+Store.prototype.render = function(){
   this.calculateCustomersAndCookies();
-
-  var thEl = document.createElement('th');
-  thEl.textContent = this.storeName;
-  id.appendChild(thEl);
-
+  var trEl = addElement('tr', false, salmonTable);
+  addElement('th', this.storeName, trEl);
   for(var i = 0; i < hoursOfOps.length; i++){
-    var tdEl = document.createElement('td');
-    tdEl.textContent = this.cookiesPerHour[i];
-    id.appendChild(tdEl);
+    addElement('td', this.cookiesPerHour[i], trEl);
   }
-
-  thEl = document.createElement('th');
-  thEl.textContent = this.cookiesDailyTotal;
-  id.appendChild(thEl);
+  addElement('th', this.cookiesDailyTotal, trEl);
 };
 
 // Here we create our objects using our constructor function.
-var pike = new Store('First and Pike', 23, 65, 6.3);
-var seatac = new Store('SeaTac Airport', 3, 24, 1.2);
-var seattle = new Store('Seattle Center', 11, 38, 3.7);
-var capitol = new Store('Capitol Hill', 20, 38, 2.3);
-var alki = new Store('Alki', 2, 16, 4.6);
+var Pike = new Store('First and Pike', 23, 65, 6.3);
+var SeaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+var Seattle = new Store('Seattle Center', 11, 38, 3.7);
+var Capitol = new Store('Capitol Hill', 20, 38, 2.3);
+var Alki = new Store('Alki', 2, 16, 4.6);
 
-var allStores = [pike, seatac, seattle, capitol, alki];
+// var allStores = [pike, seatac, seattle, capitol, alki];
 
 // Here we call our render methods.
-renderHead();
-pike.render(salesPike);
-seatac.render(salesSeaTac);
-seattle.render(salesSeattle);
-capitol.render(salesCap);
-alki.render(salesAlki);
-renderFoot();
+function renderAll(){
+  renderHead();
+  for(var i = 0; i < allStores.length; i++){
+    allStores[i].render();
+  }
+  hourlyTotals();
+  renderFoot();
+}
+renderAll();
+
+
+
+
+// Adapting the 'magic functions' from the class github. I was trying to thing of a way to create all the stores through one singe function, and found this.
+function addElement(element, content, parent){
+  var newElement = document.createElement(element);
+  if(content){
+    var newContent = document.createTextNode(content);
+    newElement.appendChild(newContent);
+  }
+  parent.appendChild(newElement);
+  return newElement;
+}
+
+// function addLocation (event){
+//   event.preventDefault();
+
+//   var name = event.target.name.value;
+//   var min = event.target.min.value;
+//   var max = event.target.max.value;
+//   var averageCookieSale = event.target.averageCookieSale.value;
+
+//   new Store(name, min, max, averageCookieSale);
+//   renderAll();
+// }
