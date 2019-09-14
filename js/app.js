@@ -25,24 +25,19 @@ var pike = {
   avgCookiesPerSale: 6.3,
 
   customersPerHour: [],
-  calcCustomersPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
-    }
-  },
-
   cookiesPerHour: [],
   cookiesDailyTotal: 0,
-  calcCookiesPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale)); // Using Math.floor to return whole integers instead of long trailing decimal values
-      this.cookiesDailyTotal += this.cookiesPerHour[i]; // Doing this here prevents unnecessary code
+
+  calcCustomerAndCookies: function(){
+    for(var i = 0; i < hoursOfOps.length; i++){
+      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
+      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale));
+      this.cookiesDailyTotal += this.cookiesPerHour[i];
     }
   },
 
   render: function(){
-    this.calcCustomersPerHour();
-    this.calcCookiesPerHour();
+    this.calcCustomerAndCookies();
 
     var lhEl = document.createElement('lh');
     lhEl.textContent = this.name;
@@ -59,6 +54,49 @@ var pike = {
     salesPike.appendChild(liEl);
   },
 };
+
+// here we'll begin to refactor, starting with pike. We'll begin by making it do the same thing, then convert to tables.
+var locations = [];
+
+// function addStore(name, custMin, custMax, avgCookies){
+//   this.name = name;
+//   this.custMin = custMin;
+//   this.custMax = custMax;
+//   this.avgCookiesPerSale = avgCookies;
+//   this.customersPerHour = [];
+//   this.cookiesPerHour = [];
+//   this.cookiesDailyTotal = 0;
+
+//   locations.push(this);
+// }
+
+// addStore.prototype.calcCustomersPerHour = function(){
+//   for(i = 0; i < hoursOfOps.length; i++){
+//     this.customersPerHour.push(getRandom(this.custMin,this.custMax));
+//   }
+// };
+
+// addStore.prototype.calcCookiesPerHour = function(){
+//   for(i = 0; i < hoursOfOps.length; i++){
+//     this.cookiesPerHour.push(Math.floor(this.customersPerHour[i]))
+//   }
+// };
+
+
+// cookiesPerHour: [],
+// cookiesDailyTotal: 0,
+// calcCookiesPerHour: function(){
+//   for(i = 0; i < hoursOfOps.length; i++){
+//     this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale)); // Using Math.floor to return whole integers instead of long trailing decimal values
+//     this.cookiesDailyTotal += this.cookiesPerHour[i]; // Doing this here prevents unnecessary code
+//   }
+// },
+
+// here we'll test it on pike
+// addStore('First and Pike', 23, 65, 6.3);
+
+
+
 var seatac = {
   name: 'SeaTac Airport',
   custMin: 3,
@@ -66,24 +104,19 @@ var seatac = {
   avgCookiesPerSale: 1.2,
 
   customersPerHour: [],
-  calcCustomersPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
-    }
-  },
-
   cookiesPerHour: [],
   cookiesDailyTotal: 0,
-  calcCookiesPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale)); // Using Math.floor to return whole integers instead of long trailing decimal values
-      this.cookiesDailyTotal += this.cookiesPerHour[i]; // Doing this here prevents unnecessary code
+
+  calcCustomerAndCookies: function(){
+    for(var i = 0; i < hoursOfOps.length; i++){
+      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
+      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale));
+      this.cookiesDailyTotal += this.cookiesPerHour[i];
     }
   },
 
   render: function(){
-    this.calcCustomersPerHour();
-    this.calcCookiesPerHour();
+    this.calcCustomerAndCookies();
 
     var lhEl = document.createElement('lh');
     lhEl.textContent = this.name;
@@ -107,24 +140,19 @@ var seattle = {
   avgCookiesPerSale: 3.7,
 
   customersPerHour: [],
-  calcCustomersPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
-    }
-  },
-
   cookiesPerHour: [],
   cookiesDailyTotal: 0,
-  calcCookiesPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale)); // Using Math.floor to return whole integers instead of long trailing decimal values
-      this.cookiesDailyTotal += this.cookiesPerHour[i]; // Doing this here prevents unnecessary code
+
+  calcCustomerAndCookies: function(){
+    for(var i = 0; i < hoursOfOps.length; i++){
+      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
+      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale));
+      this.cookiesDailyTotal += this.cookiesPerHour[i];
     }
   },
 
   render: function(){
-    this.calcCustomersPerHour();
-    this.calcCookiesPerHour();
+    this.calcCustomerAndCookies();
 
     var lhEl = document.createElement('lh');
     lhEl.textContent = this.name;
@@ -148,24 +176,19 @@ var capitol = {
   avgCookiesPerSale: 2.3,
 
   customersPerHour: [],
-  calcCustomersPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
-    }
-  },
-
   cookiesPerHour: [],
   cookiesDailyTotal: 0,
-  calcCookiesPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale)); // Using Math.floor to return whole integers instead of long trailing decimal values
-      this.cookiesDailyTotal += this.cookiesPerHour[i]; // Doing this here prevents unnecessary code
+
+  calcCustomerAndCookies: function(){
+    for(var i = 0; i < hoursOfOps.length; i++){
+      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
+      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale));
+      this.cookiesDailyTotal += this.cookiesPerHour[i];
     }
   },
 
   render: function(){
-    this.calcCustomersPerHour();
-    this.calcCookiesPerHour();
+    this.calcCustomerAndCookies();
 
     var lhEl = document.createElement('lh');
     lhEl.textContent = this.name;
@@ -189,24 +212,19 @@ var alki = {
   avgCookiesPerSale: 4.6,
 
   customersPerHour: [],
-  calcCustomersPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
-    }
-  },
-
   cookiesPerHour: [],
   cookiesDailyTotal: 0,
-  calcCookiesPerHour: function(){
-    for(i = 0; i < hoursOfOps.length; i++){
-      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale)); // Using Math.floor to return whole integers instead of long trailing decimal values
-      this.cookiesDailyTotal += this.cookiesPerHour[i]; // Doing this here prevents unnecessary code
+
+  calcCustomerAndCookies: function(){
+    for(var i = 0; i < hoursOfOps.length; i++){
+      this.customersPerHour.push(getRandom(this.custMin, this.custMax));
+      this.cookiesPerHour.push(Math.floor(this.customersPerHour[i] * this.avgCookiesPerSale));
+      this.cookiesDailyTotal += this.cookiesPerHour[i];
     }
   },
 
   render: function(){
-    this.calcCustomersPerHour();
-    this.calcCookiesPerHour();
+    this.calcCustomerAndCookies();
 
     var lhEl = document.createElement('lh');
     lhEl.textContent = this.name;
