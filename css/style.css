@@ -29,16 +29,6 @@ body {
     margin: 1% auto 1% auto;
 }
 
-.containerLists {
-    /* background-color: #DE685C40; */
-    background-color: #00BDDA40;
-    width: 95%;
-    height: auto;
-    margin: 1% auto 1% auto;
-    padding: 0.5% 0% 0.5% 0%;
-    display: flex;
-}
-
 .salmonLists {
     /* background-color: #00BDDAAA; */
     background-color: #DE685C90;

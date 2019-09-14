@@ -11,5 +11,15 @@ September 04, 2019
 
 Wow, I've done a really good job of keeping my README updated, haven't I?
 
+September 14, 2019
+- Lab 06 Submitted
+- Lab 07 Submitted
+- Lab 08 Submitted
+- Lab 09b In progress, let's style the page up a bit better
+- Lab 10b Next
+
+Septmeber 14, 2019 - Lab 09 b
+- 
+
 .
 .
