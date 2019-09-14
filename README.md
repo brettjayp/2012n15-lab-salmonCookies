@@ -8,6 +8,8 @@ Color Palette:
 
 September 04, 2019
 - Repository initialized. Decided on color palette and created wireframe. ACP'ing current state.
-.
+
+Wow, I've done a really good job of keeping my README updated, haven't I?
+
 .
 .

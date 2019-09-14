@@ -30,8 +30,34 @@
           Beef ground round venison, porchetta hamburger meatball cupim jerky ham hock pancetta pastrami turkey kevin spare ribs. Rump jerky burgdoggen hamburger. Turkey pork belly andouille sirloin, meatloaf bresaola filet mignon biltong burgdoggen strip steak. Short ribs tenderloin cupim, pig beef ribs jowl shank ball tip.
       </p>
     </section>
-    <!-- The following section is where our table format will be located. -->
-    <section>
+    <section> <!-- This section is for our form -->
+      <form  id="salmonForm">
+        <fieldset>
+          <legend>Add a Store</legend>
+          
+          <label for="name">Name of the Store</label>
+          <input type="text" name="name" required>
+
+          <br />
+
+          <label for="min">Minimum Customers Per Hour</label>
+          <input type="text" name="min" required>
+
+          <br />
+
+          <label for="max">Maximum Customers Per Hour</label>
+          <input type="text" name="max" required>
+
+          <br />
+
+          <label for="avg">Average Cookies Sold per Sale</label>
+          <input type="text" name="avg" required>
+
+          <button>Submit</button>
+        </fieldset>
+      </form>
+    </section>
+    <section> <!-- This section is for our table -->
         <table id="salmonTable" style="background-color:#00BDDA40"></table>
     </section>
   </main>

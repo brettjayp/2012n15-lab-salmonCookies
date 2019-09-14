@@ -3,6 +3,7 @@
 
 // Global Variables
 var salmonTable = document.getElementById('salmonTable');
+var addLocationForm = document.getElementById('salmonForm');
 var hoursOfOps = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var totalTotal = 0;
 var hoursTotals = [];
@@ -38,6 +39,43 @@ function hourlyTotals(){
     hoursTotals.push(hourlyTotal);
   }
 }
+function addElement(element, content, parent){
+  // This function was taken from the call github. I was trying to come up with ways to add elements via funtion.
+  var newElement = document.createElement(element);
+  if(content){
+    var newContent = document.createTextNode(content);
+    newElement.appendChild(newContent);
+  }
+  parent.appendChild(newElement);
+  return newElement;
+}
+function renderAll(){
+  totalTotal = 0;
+  hoursTotals = [];
+  renderHead();
+  for(var i = 0; i < allStores.length; i++){
+    allStores[i].render();
+  }
+  hourlyTotals();
+  renderFoot();
+}
+
+// FORM
+function addLocation (event){
+  event.preventDefault();
+
+  document.getElementsByTagName('table')[0].innerHTML = '';
+
+  var name = event.target.name.value;
+  var min = event.target.min.value;
+  var max = event.target.max.value;
+  var avg = event.target.avg.value;
+
+  new Store(name, min, max, avg);
+  renderAll();
+}
+addLocationForm.addEventListener('submit', addLocation);
+// END FORM
 
 // Here's our constructor function. Below, method for calculating customers/hr and cookies/hr, and add to daily totals of 'this' store and dailyTotals. Last we render.
 function Store(name, min, max, avg){
@@ -48,7 +86,6 @@ function Store(name, min, max, avg){
 
   allStores.push(this);
 }
-
 Store.prototype.calculateCustomersAndCookies = function(){
   this.customersPerHour = [];
   this.cookiesPerHour = [];
@@ -59,7 +96,6 @@ Store.prototype.calculateCustomersAndCookies = function(){
     this.cookiesDailyTotal += this.cookiesPerHour[i];
   }
 };
-
 Store.prototype.render = function(){
   this.calculateCustomersAndCookies();
   var trEl = addElement('tr', false, salmonTable);
@@ -70,48 +106,11 @@ Store.prototype.render = function(){
   addElement('th', this.cookiesDailyTotal, trEl);
 };
 
-// Here we create our objects using our constructor function.
+// Here we create our pre-existing objects using our constructor function.
 var Pike = new Store('First and Pike', 23, 65, 6.3);
 var SeaTac = new Store('SeaTac Airport', 3, 24, 1.2);
 var Seattle = new Store('Seattle Center', 11, 38, 3.7);
 var Capitol = new Store('Capitol Hill', 20, 38, 2.3);
 var Alki = new Store('Alki', 2, 16, 4.6);
 
-// var allStores = [pike, seatac, seattle, capitol, alki];
-
-// Here we call our render methods.
-function renderAll(){
-  renderHead();
-  for(var i = 0; i < allStores.length; i++){
-    allStores[i].render();
-  }
-  hourlyTotals();
-  renderFoot();
-}
 renderAll();
-
-
-
-
-// Adapting the 'magic functions' from the class github. I was trying to thing of a way to create all the stores through one singe function, and found this.
-function addElement(element, content, parent){
-  var newElement = document.createElement(element);
-  if(content){
-    var newContent = document.createTextNode(content);
-    newElement.appendChild(newContent);
-  }
-  parent.appendChild(newElement);
-  return newElement;
-}
-
-// function addLocation (event){
-//   event.preventDefault();
-
-//   var name = event.target.name.value;
-//   var min = event.target.min.value;
-//   var max = event.target.max.value;
-//   var averageCookieSale = event.target.averageCookieSale.value;
-
-//   new Store(name, min, max, averageCookieSale);
-//   renderAll();
-// }
