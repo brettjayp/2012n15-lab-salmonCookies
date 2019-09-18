@@ -38,3 +38,26 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+
+
+/* Below is for the NEWindex.html */
+
+.indexSections{
+    display: flex;
+    width: 900px;
+    height: 30%;
+}
+
+.indexBig{
+    float: left;
+    height: 300px;
+    width: 600px;
+}
+
+.indexSmall{
+    float: left;
+    height: 300px;
+    width: 300px;
+}
+
+/* end NEWindex.html */
