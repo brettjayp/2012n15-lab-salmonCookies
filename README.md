@@ -18,8 +18,13 @@ September 14, 2019
 - Lab 09b In progress, let's style the page up a bit better
 - Lab 10b Next
 
-Septmeber 14, 2019 - Lab 09 b
-- 
+
+- mocked up wireframe with sizes in pixels
+- kept same selected colors, added gray (maybe?), changed use of the colors
+- new design for index (currently only used in NEWindex.html)
+- rotated salmon.png
+- want to (not sure if I plan to) have salmon.png only display when screen size is more than 960px wide, else display will be width of .indexFeed and .iconBar and will drop salmon.png (ie media device displays)
+- new index design in ~80% completed.
 
 .
 .

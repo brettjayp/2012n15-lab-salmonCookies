@@ -4,7 +4,7 @@ Color Palette:
     #A83832 #C35047 #DE685C #FA8072 #00BDDA #00A4C1 #008BA9 (l-r, more pink > salmon > more blue)
 */
 
-body {
+/* body {
     background-color: #FA807240;
 }
 
@@ -30,34 +30,99 @@ body {
 }
 
 .salmonLists {
-    /* background-color: #00BDDAAA; */
     background-color: #DE685C90;
     width: 12.5%;
     height: auto;
     display: inline-block;
     margin: 0 auto;
     text-align: center;
-}
+} */
 
 
 /* Below is for the NEWindex.html */
 
-.indexSections{
-    display: flex;
-    width: 900px;
-    height: 30%;
+
+
+body {
+    text-align: center;
+    /* background-color: #008BA9; */
+    /* background-color: #A83832; */
 }
 
-.indexBig{
-    float: left;
-    height: 300px;
-    width: 600px;
+#indexContainer {
+    display: inline-block;
+    background-color: #A83832;
+    width: 1440px;
+    height: 1320px;
+    padding-top: 40px;
 }
 
-.indexSmall{
+#heroImage {
     float: left;
-    height: 300px;
+    margin-left: 40px;
+    width: 360px;
+    height: 1240px;
+}
+
+#iconBar {
+    float: right;
+    text-align: center;
+    background-color: #008BA9;
+    margin-right: 40px;
+    width: 960px;
+    height: 100px;
+}
+
+.icon {
+    float: right;
+    margin: 20px 20px;
+    width: 60px;
+    height: 60px;
+}
+
+#iconBanner {
+    float: left;
+    margin: 20px 20px;
+    font-size: 60px;
+    color: white;
+}
+
+#indexFeed {
+    float: left;
+    margin-right: 40px;
+    text-align: center;
+    width: 960px;
+}
+
+.feedBox {
+    display: inline-block;
+    /* background-color: #A83832; */
+    background-color: #008BA9;
+    margin: 20px 40px;
+    width: 960px;
+    height: 340px;
+}
+
+.feedImage {
+    float: left;
+    margin: 20px auto 20px 20px;
     width: 300px;
+    height: 300px;
+}
+
+.feedText {
+    float: right;
+    margin: 20px 20px 20px auto;
+    background-color: gray;
+    color: white;
+    font-size: 20px;
+    width: 600px;
+    height: 300px;
+}
+
+.feedText * {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* end NEWindex.html */
