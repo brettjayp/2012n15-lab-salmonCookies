@@ -1,4 +1,5 @@
 #colorPalette {
+    /* This is here just for color reference */
     /* https://www.canva.com/colors/color-meanings/salmon/ */
     color: #A83832; /* darkest pink/salmon */
     color: #C35047; /*  */
@@ -9,51 +10,12 @@
     color: #008BA9; /* darkest blue */
 }
 
-/* body {
-    background-color: #FA807240;
-}
-
-#titleBar {
-    position: absolute;
-    background-color: #DE685CCC;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-}
-
-#heroImage {
-    background-color: #00BDDA;
-    width: 100%;
-    height: auto;
-}
-
-#mainText {
-    background-color: #008BA9;
-    width: 95%;
-    height: auto;
-    margin: 1% auto 1% auto;
-}
-
-.salmonLists {
-    background-color: #DE685C90;
-    width: 12.5%;
-    height: auto;
-    display: inline-block;
-    margin: 0 auto;
-    text-align: center;
-} */
-
-
-/* Below is for the NEWindex.html */
-
-
-
 body {
     text-align: center;
     background-color: #A83832;
 }
 
-#indexContainer {
+#pageContainer {
     display: inline-block;
     width: 1440px;
     height: 1320px;
@@ -91,7 +53,7 @@ body {
     color: white;
 }
 
-#indexFeed {
+#feedContainer {
     float: left;
     margin-right: 40px;
     text-align: center;
@@ -142,4 +104,3 @@ h1 {
     line-height: 0px;
 }
 
-/* end NEWindex.html */

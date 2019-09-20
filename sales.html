@@ -1,75 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Salmon Cookies, Sales Page</title>
+  <title>NEW_SALES - Salmon Cookies, Sales Page</title>
   <link href="css/style.css" type="text/css" rel="stylesheet" />
-  <nav id="titleBar">
-      <a href="pages/about.html">About</a></li>
-  </nav>
 </head>
 <body>
-
-
-  <header>
-    <img id="heroImage" src="assets/salmon.png" />
-    <section id="heroImage">
-      <h1>Salmon Cookies, Sales Page</h1>
-      <p>
-          This page is for displaying the reported sales.<br />For now, we're going to do so using lists.
-      </p>
-    </section>
-  </header>
-
-
   <main>
-    <section id="mainText">
-      <p>
-          Spicy jalapeno bacon ipsum dolor amet drumstick pork loin beef ribs, tail meatloaf porchetta burgdoggen ground round landjaeger swine bacon chicken venison. Corned beef rump tenderloin ground round salami prosciutto venison. Cow venison pork hamburger rump capicola. Drumstick filet mignon turducken shoulder ham. Capicola drumstick corned beef tail, cupim meatloaf filet mignon turkey ball tip fatback biltong leberkas. Turkey pig alcatra cupim, frankfurter landjaeger boudin porchetta ball tip. Hamburger pork loin jowl, short ribs jerky leberkas salami turkey drumstick corned beef.
-      </p>
-      <p>
-          Beef ground round venison, porchetta hamburger meatball cupim jerky ham hock pancetta pastrami turkey kevin spare ribs. Rump jerky burgdoggen hamburger. Turkey pork belly andouille sirloin, meatloaf bresaola filet mignon biltong burgdoggen strip steak. Short ribs tenderloin cupim, pig beef ribs jowl shank ball tip.
-      </p>
-    </section>
-    <section> <!-- This section is for our form -->
+    <section id="pageContainer">
+
+        <a href="index.html"><img id="heroImage" src="assets/salmon.png" alt="A beautiful salmon" title="Salmon Cookies Home Page"></a>
+
+        <div id="iconBar">
+
+          <div id="iconBanner">Sales</div>
+          <input type="image" class="icon" src="assets/chinook.jpg" id="clickFishingSpots" title="Fishing Spots / Find Us">
+          <input type="image" class="icon" src="assets/shirt.jpg" id="clickMerchandise" title="Merchandise">
+          <a href="sales.html"><img class="icon" src="assets/cutter.jpeg" title="Sales / Employee"></a>
+          <input type="image" class="icon" src="assets/frosted-cookie.jpg" id="clickNewOrders" title="New Orders">
+          <input type="image" class="icon" src="assets/fish.jpg" id="clickSocial" title="Social">
+          <a href="index.html"><img class="icon" src="assets/salmon.png" title="Salmon Cookies Home Page"></a>
+        </div> <!-- iconBar -->
+
+        <section id="feedContainer">
+
+          <div class="feedBox">
+            <div class="feedText feedBoxMedium">
+              <h1>Bacon Ipsum</h1>
+              <p>Spicy jalapeno bacon ipsum dolor amet drumstick pork loin beef ribs, tail meatloaf porchetta burgdoggen ground round landjaeger swine bacon chicken venison. Corned beef rump tenderloin ground round salami prosciutto venison. Cow venison pork hamburger rump capicola. Drumstick filet mignon turducken shoulder ham. Capicola drumstick corned beef tail, cupim meatloaf filet mignon turkey ball tip fatback biltong leberkas. Turkey pig alcatra cupim, frankfurter landjaeger boudin porchetta ball tip. Hamburger pork loin jowl, short ribs jerky leberkas salami turkey drumstick corned beef.</p>
+            </div> <!-- feedText -->
+            <div class="feedImage feedBoxMedium">
+              IMAGE GOES HERE
+            </div> <!-- feedImage -->
+          </div> <!-- feedBox -->
+
+          <div class="feedBox">
+            <p>NEW ELEMENT feedForm GOES HERE</p>
+
       <form  id="salmonForm">
-        <fieldset>
-          <legend>Add a Store</legend>
-          
-          <label for="name">Name of the Store</label>
-          <input type="text" name="name" required>
+          <fieldset>
+            <legend>Add a Store</legend>
+            
+            <label for="name">Name of the Store</label>
+            <input type="text" name="name" required>
+  
+            <br />
+  
+            <label for="min">Minimum Customers Per Hour</label>
+            <input type="text" name="min" required>
+  
+            <br />
+  
+            <label for="max">Maximum Customers Per Hour</label>
+            <input type="text" name="max" required>
+  
+            <br />
+  
+            <label for="avg">Average Cookies Sold per Sale</label>
+            <input type="text" name="avg" required>
+  
+            <button>Submit</button>
+          </fieldset>
+        </form>
+          </div> <!-- feedBox -->
 
-          <br />
+          <div class="feedBox">
+            <p>PARENT ELEMENT CHANGE TO NEW ELEMENT feedBoxTable</p>
+            <p>NEW ELEMENT feedSalesTable GOES HERE</p>
+            <table id="salmonTable" style="background-color:#00BDDA40"></table>
+          </div> <!-- feedBox -->
 
-          <label for="min">Minimum Customers Per Hour</label>
-          <input type="text" name="min" required>
-
-          <br />
-
-          <label for="max">Maximum Customers Per Hour</label>
-          <input type="text" name="max" required>
-
-          <br />
-
-          <label for="avg">Average Cookies Sold per Sale</label>
-          <input type="text" name="avg" required>
-
-          <button>Submit</button>
-        </fieldset>
-      </form>
-    </section>
-    <section> <!-- This section is for our table -->
-        <table id="salmonTable" style="background-color:#00BDDA40"></table>
-    </section>
+        </section> <!-- feedContainer -->
+    </section> <!-- pageContainer -->
   </main>
-
 
   <footer>
     <!-- <br />; body, footer;<br />; -->
   </footer>
 
 
-  <script src="js/app.js"></script>
   <script src="js/appSales.js"></script>
-  <!-- <script src="js/list.js"></script> -->
+  <script src="js/app.js"></script>
 </body>
 </html>

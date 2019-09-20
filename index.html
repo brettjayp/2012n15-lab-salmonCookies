@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NEW_INDEX Salmon Cookies</title>
+  <title>Salmon Cookies</title>
   <link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
   <main>
-    <section id="indexContainer">
+    <section id="pageContainer">
 
-      <img id="heroImage" src="assets/salmon.png">
+      <a href="index.html"><img id="heroImage" src="assets/salmon.png" alt="A beautiful salmon" title="Salmon Cookies Home Page"></a>
 
       <div id="iconBar">
 
         <div id="iconBanner">Salmon Cookies</div>
         <!-- Order is right to left, due to float: right -->
         <!-- For buttons without a current working link, they are <input> buttons with a function to call an alert indicating notional functionality. Buttons with a current functional working link will use the <a> tag. -->
-        <input type="image" class="icon" src="assets/chinook.jpg" name="clickFishingSpots" title="Fishing Spots / Find Us">
-        <input type="image" class="icon" src="assets/shirt.jpg" name="clickMerchandise" title="Merchandise">
-        <input type="image" class="icon" src="assets/cutter.jpeg" name="clickSalesEmployees" title="Sales / Employees">
-        <input type="image" class="icon" src="assets/frosted-cookie.jpg" name="clickNewOrders" title="New Orders">
-        <input type="image" class="icon" src="assets/fish.jpg" name="clickSocial" title="Social">
+        <input type="image" class="icon" src="assets/chinook.jpg" id="clickFishingSpots" title="Fishing Spots / Find Us">
+        <input type="image" class="icon" src="assets/shirt.jpg" id="clickMerchandise" title="Merchandise">
+        <a href="sales.html"><img class="icon" src="assets/cutter.jpeg" title="Sales / Employee"></a>
+        <input type="image" class="icon" src="assets/frosted-cookie.jpg" id="clickNewOrders" title="New Orders">
+        <input type="image" class="icon" src="assets/fish.jpg" id="clickSocial" title="Social">
       </div> <!-- iconBar -->
 
-      <section id="indexFeed">
+      <section id="feedContainer">
 
         <div class="feedBox">
           <div class="feedText feedBoxMedium">
               <h1>New Orders</h1>
-            <h2>Click here to order some salmon cookies!</h2>
+            <h2>Click the image to order some salmon cookies!</h2>
             <p>Coming soon, pick up at any location!</p>
           </div> <!-- feedText -->
-          <img class="feedImage feedBoxMedium" src="assets/frosted-cookie.jpg" alt="A colorful frosted salmon cookie" title="New Orders">
+          <input type="image" class="feedImage feedBoxMedium" src="assets/frosted-cookie.jpg" alt="A colorful frosted salmon cookie" id="clickNewOrdersBig" title="New Orders">
         </div> <!-- feedBox -->
 
         <div class="feedBox">
           <div class="feedText feedBoxSmall">
             <h1>Fishing Spots</h1>
-            <p>Click here to find all the locations where you can CATCH a salmon cookie!</p>
+            <p>Click the image to find all the locations where you can CATCH a salmon cookie!</p>
           </div> <!-- feedText -->
-          <img class="feedImage feedBoxLarge" src="assets/chinook.jpg" alt="A chinook salmon" title="Fishing Spots / Find Us">
+          <input type="image" class="feedImage feedBoxLarge" src="assets/chinook.jpg" alt="A chinook salmon" id="clickFishingSpotsBig" title="Fishing Spots / Find Us">
         </div> <!-- feedBox -->
 
         <div class="feedBox">
@@ -53,8 +53,8 @@
           <img class="feedImage feedBoxMedium" src="assets/family.jpg" alt="Pat's family" title="About Pat's Family">
         </div> <!-- feedBox -->
 
-      </section> <!-- indexFeed -->
-    </section> <!-- indexContainer -->
+      </section> <!-- feedContainer -->
+    </section> <!-- pageContainer -->
   </main>
 
 
