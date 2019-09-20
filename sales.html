@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>NEW_SALES - Salmon Cookies, Sales Page</title>
+  <title>Salmon Cookies - Sales</title>
   <link href="css/style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -24,43 +24,45 @@
         <section id="feedContainer">
 
           <div class="feedBox">
-            <div class="feedText feedBoxMedium">
+            <div class="feedText feedBoxLarge">
               <h1>Bacon Ipsum</h1>
               <p>Spicy jalapeno bacon ipsum dolor amet drumstick pork loin beef ribs, tail meatloaf porchetta burgdoggen ground round landjaeger swine bacon chicken venison. Corned beef rump tenderloin ground round salami prosciutto venison. Cow venison pork hamburger rump capicola. Drumstick filet mignon turducken shoulder ham. Capicola drumstick corned beef tail, cupim meatloaf filet mignon turkey ball tip fatback biltong leberkas. Turkey pig alcatra cupim, frankfurter landjaeger boudin porchetta ball tip. Hamburger pork loin jowl, short ribs jerky leberkas salami turkey drumstick corned beef.</p>
             </div> <!-- feedText -->
-            <div class="feedImage feedBoxMedium">
-              IMAGE GOES HERE
-            </div> <!-- feedImage -->
+            <img class="feedImage feedBoxSmall" src="assets/cutter.jpeg" alt="A cookie cutter in the shape of a salmon"> <!-- feedImage -->
           </div> <!-- feedBox -->
 
           <div class="feedBox">
-            <p>NEW ELEMENT feedForm GOES HERE</p>
+            <div class="feedFull">
+              <h1>Add a new store to the sales report.</h1>
+              <form  id="salmonForm">
+                <fieldset class="salesForm">
+                  
+                  <label for="name">Name of the Store</label>
+                  <input type="text" name="name" required>
+        
+                  <br />
+        
+                  <label for="min">Minimum Customers Per Hour</label>
+                  <input type="text" name="min" required>
+        
+                  <br />
+        
+                  <label for="max">Maximum Customers Per Hour</label>
+                  <input type="text" name="max" required>
+        
+                  <br />
+        
+                  <label for="avg">Average Cookies Sold per Sale</label>
+                  <input type="text" name="avg" required>
 
-      <form  id="salmonForm">
-          <fieldset>
-            <legend>Add a Store</legend>
+                  <br />
+        
+                  <button>Submit</button>
+                </fieldset>
+              </form>
+            </div> <!-- feedFull -->
+
             
-            <label for="name">Name of the Store</label>
-            <input type="text" name="name" required>
-  
-            <br />
-  
-            <label for="min">Minimum Customers Per Hour</label>
-            <input type="text" name="min" required>
-  
-            <br />
-  
-            <label for="max">Maximum Customers Per Hour</label>
-            <input type="text" name="max" required>
-  
-            <br />
-  
-            <label for="avg">Average Cookies Sold per Sale</label>
-            <input type="text" name="avg" required>
-  
-            <button>Submit</button>
-          </fieldset>
-        </form>
           </div> <!-- feedBox -->
 
           <div class="feedBox">

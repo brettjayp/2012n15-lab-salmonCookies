@@ -22,8 +22,9 @@ function clickSocial (event){
 // Event Listeners
 // the following event listeners are for the iconBar buttons that don't have pages yet
 document.getElementById('clickFishingSpots').addEventListener('click', clickFishingSpots);
-document.getElementById('clickFishingSpotsBig').addEventListener('click', clickFishingSpots);
 document.getElementById('clickMerchandise').addEventListener('click', clickMerchandise);
 document.getElementById('clickNewOrders').addEventListener('click', clickNewOrders);
-document.getElementById('clickNewOrdersBig').addEventListener('click', clickNewOrders);
 document.getElementById('clickSocial').addEventListener('click', clickSocial);
+// these event listener must go last, they don't exist on all pages, if they don't exist on a page then any listeners below them won't work.
+document.getElementById('clickFishingSpotsBig').addEventListener('click', clickFishingSpots);
+document.getElementById('clickNewOrdersBig').addEventListener('click', clickNewOrders);
