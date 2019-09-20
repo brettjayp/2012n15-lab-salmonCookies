@@ -3,16 +3,17 @@
 <head>
   <title>Salmon Cookies - Sales</title>
   <link href="css/style.css" type="text/css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 <body>
   <main>
-    <section id="pageContainer">
+    <section class="pageContainer">
 
         <a href="index.html"><img id="heroImage" src="assets/salmon.png" alt="A beautiful salmon" title="Salmon Cookies Home Page"></a>
 
-        <div id="iconBar">
+        <div class="iconBar">
 
-          <div id="iconBanner">Sales</div>
+          <div class="iconBanner">Sales</div>
           <input type="image" class="icon" src="assets/chinook.jpg" id="clickFishingSpots" title="Fishing Spots / Find Us">
           <input type="image" class="icon" src="assets/shirt.jpg" id="clickMerchandise" title="Merchandise">
           <a href="sales.html"><img class="icon" src="assets/cutter.jpeg" title="Sales / Employee"></a>
@@ -21,7 +22,7 @@
           <a href="index.html"><img class="icon" src="assets/salmon.png" title="Salmon Cookies Home Page"></a>
         </div> <!-- iconBar -->
 
-        <section id="feedContainer">
+        <section class="feedContainer">
 
           <div class="feedBox">
             <div class="feedText feedBoxLarge">
@@ -38,47 +39,45 @@
                 <fieldset class="salesForm">
                   
                   <label for="name">Name of the Store</label>
-                  <input type="text" name="name" required>
-        
-                  <br />
+                  <input type="text" name="name" required><br />
         
                   <label for="min">Minimum Customers Per Hour</label>
-                  <input type="text" name="min" required>
-        
-                  <br />
+                  <input type="text" name="min" required><br />
         
                   <label for="max">Maximum Customers Per Hour</label>
-                  <input type="text" name="max" required>
-        
-                  <br />
+                  <input type="text" name="max" required><br />
         
                   <label for="avg">Average Cookies Sold per Sale</label>
-                  <input type="text" name="avg" required>
+                  <input type="text" name="avg" required><br />
 
-                  <br />
-        
                   <button>Submit</button>
-                </fieldset>
-              </form>
+                </fieldset> <!-- salesForm -->
+              </form> <!-- salmonForm -->
             </div> <!-- feedFull -->
-
-            
           </div> <!-- feedBox -->
 
-          <div class="feedBox">
-            <p>PARENT ELEMENT CHANGE TO NEW ELEMENT feedBoxTable</p>
-            <p>NEW ELEMENT feedSalesTable GOES HERE</p>
-            <table id="salmonTable" style="background-color:#00BDDA40"></table>
-          </div> <!-- feedBox -->
+          <div class="feedBoxTable">
+            <div class="feedFullTable">
+              <h1>Sales Report</h1>
+              <table id="salmonTable"></table>
+            </div> <!-- feedFullTable -->
+          </div> <!-- feedBoxTable -->
 
         </section> <!-- feedContainer -->
     </section> <!-- pageContainer -->
   </main>
 
-  <footer>
-    <!-- <br />; body, footer;<br />; -->
+  <footer class="footerContainer">
+    <section class="footerBox">
+      <div class="footer">
+        <h1>Contact and Hours</h1>
+        <p style="margin-top:-5px">Phone: (253) COOKIES<br />
+          Email: fakeEmail@PatsSalmonCookies.com<br />
+          Fax: This is 2019, we don't have fax<br />
+          Hours: 24/7 because we're awesome</p>
+      </div>
+    </section>
   </footer>
-
 
   <script src="js/appSales.js"></script>
   <script src="js/app.js"></script>

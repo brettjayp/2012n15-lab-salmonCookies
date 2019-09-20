@@ -13,13 +13,16 @@
 body {
     text-align: center;
     background-color: #A83832;
+    font-family: "Georgia";
 }
 
-#pageContainer {
+.pageContainer {
     display: inline-block;
     width: 1440px;
-    height: 1320px;
+    height: auto;
+    min-height: 1320px;
     padding-top: 40px;
+    margin-bottom: 20px;
 }
 
 #heroImage {
@@ -29,7 +32,7 @@ body {
     height: 1240px;
 }
 
-#iconBar {
+.iconBar {
     float: right;
     text-align: center;
     background-color: #008BA9;
@@ -46,14 +49,15 @@ body {
     height: 60px;
 }
 
-#iconBanner {
+.iconBanner {
     float: left;
-    margin: 20px 20px;
-    font-size: 60px;
+    margin: 15px 0px 25px 20px;
+    font-size: 55px;
     color: white;
+    font-family: 'Roboto Slab', serif;
 }
 
-#feedContainer {
+.feedContainer {
     float: left;
     margin-right: 40px;
     text-align: center;
@@ -110,6 +114,8 @@ body {
 h1 {
     font-size: 40px;
     margin: 0px auto 10px auto;
+    color: white;
+    font-family: 'Roboto Slab', serif;
 }
 
 .salesForm {
@@ -135,3 +141,64 @@ h1 {
     font-size: 30px;
     font-weight: bold;
 }
+
+.feedBoxTable {
+    /* display: inline-block; */
+    text-align: center;
+    background-color: #008BA9;
+    margin: 20px 40px;
+    width: 960px;
+    height: auto;
+    min-height: 340px;
+}
+
+.feedFullTable {
+    margin: 20px;
+    background-color: gray;
+    min-width: 920px;
+    width: auto;
+    min-height: 300px;
+    height: auto;
+    color: white;
+    /* float: right; */
+    display: inline-block;
+}
+
+#salmonTable {
+    font-size: 20px;
+    font-family: "Helvetica";
+}
+
+
+
+
+
+/* FOOTER */
+
+.footerContainer {
+    display: inline-block;
+    width: 1440px;
+    height: 240px;
+    margin: 0px auto 20px auto;
+    background-color: #008BA9;
+}
+
+.footerBox {
+    margin: 20px;
+    background-color: gray;
+    width: 1400px;
+    height: 200px;
+}
+
+.footer {
+    float: left;
+    width: 1360px;
+    height: 160px;
+    margin: 20px 20px 20px 20px;
+    background-color: #008BA9;
+    color: white;
+    font-family: "Georgia";
+    font-size: 20px;
+}
+
+/* END FOOTER */
