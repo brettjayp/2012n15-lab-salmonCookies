@@ -26,5 +26,9 @@ September 14, 2019
 - want to (not sure if I plan to) have salmon.png only display when screen size is more than 960px wide, else display will be width of .indexFeed and .iconBar and will drop salmon.png (ie media device displays)
 - new index design in ~80% completed.
 
+- Decided to keep all JS for the sales page in appSales.js to keep it isolated. This keeps app.js clean for use in other pages. Also, since that functionality is 'reserved' for employee access, this would reduce security concerns in a real-world application.
+- added appSales.js to sales.html
+- removed NEWindex.html as the design is final and functional, copied all into index.html
+
 .
 .

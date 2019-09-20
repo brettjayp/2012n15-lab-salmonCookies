@@ -1,8 +1,13 @@
-/* 
-Color Palette:
-    https://www.canva.com/colors/color-meanings/salmon/
-    #A83832 #C35047 #DE685C #FA8072 #00BDDA #00A4C1 #008BA9 (l-r, more pink > salmon > more blue)
-*/
+#colorPalette {
+    /* https://www.canva.com/colors/color-meanings/salmon/ */
+    color: #A83832; /* darkest pink/salmon */
+    color: #C35047; /*  */
+    color: #DE685C; /*  */
+    color: #FA8072; /* salmon */
+    color: #00BDDA; /* lightest blue */
+    color: #00A4C1; /* medium blue */
+    color: #008BA9; /* darkest blue */
+}
 
 /* body {
     background-color: #FA807240;
@@ -45,13 +50,11 @@ Color Palette:
 
 body {
     text-align: center;
-    /* background-color: #008BA9; */
-    /* background-color: #A83832; */
+    background-color: #A83832;
 }
 
 #indexContainer {
     display: inline-block;
-    background-color: #A83832;
     width: 1440px;
     height: 1320px;
     padding-top: 40px;
@@ -69,6 +72,7 @@ body {
     text-align: center;
     background-color: #008BA9;
     margin-right: 40px;
+    margin-bottom: 20px;
     width: 960px;
     height: 100px;
 }
@@ -96,7 +100,6 @@ body {
 
 .feedBox {
     display: inline-block;
-    /* background-color: #A83832; */
     background-color: #008BA9;
     margin: 20px 40px;
     width: 960px;
@@ -104,25 +107,39 @@ body {
 }
 
 .feedImage {
-    float: left;
-    margin: 20px auto 20px 20px;
-    width: 300px;
+    float: right;
+    margin: 20px 20px 20px auto;
     height: 300px;
 }
 
 .feedText {
-    float: right;
-    margin: 20px 20px 20px auto;
+    float: left;
+    margin: 20px auto 20px 20px;
     background-color: gray;
     color: white;
-    font-size: 20px;
-    width: 600px;
     height: 300px;
+}
+
+.feedBoxSmall {
+    width: 300px;
+}
+
+.feedBoxMedium {
+    width: 450px;
+}
+
+.feedBoxLarge {
+    width: 600px;
 }
 
 .feedText * {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 0px;
 }
 
 /* end NEWindex.html */
